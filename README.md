@@ -7,7 +7,14 @@ pip install pytest ( To install pytest on Ubuntu)
 
 pip install requests ( To install requests in Ubuntu)
 
-#To run test 
-pytest -v 
+#HOW TO RUN TESTS
+
+First run 'pipenv shell'
+
+
+it will start a pip environment with requests module 
+
+And then start the test as below
+pytest -v test_music_festival.py
 
 
