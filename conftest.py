@@ -1,5 +1,9 @@
 import pytest
 import requests
+import logging
+import sys
+
+
 
 @pytest.fixture
 def myget():
@@ -11,3 +15,15 @@ def myget():
      
  
      return(response)
+
+
+@pytest.fixture
+def mylog():
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        handlers=[
+            logging.FileHandler("debug.log"),
+            logging.StreamHandler(sys.stdout)
+        ]
+    )
