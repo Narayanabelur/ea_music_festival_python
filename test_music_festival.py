@@ -72,10 +72,13 @@ def test_correct_bands_in_correct_mustic_festival(myget):
     myjson = json.loads(req_content)
 
     for i in myjson:
-        if (i['name'] == "LOL-palooza"):
-            for resp_key, resp_value in i.items():
-                if (resp_key == 'bands'):
-                    print ("+++++++++++>band names: ", resp_value)
+        print ("Festival names---------->", i['name'])
+        for resp_key, resp_value in i.items():
+            if (resp_key == 'bands'):
+                for j in resp_value:
+                    for bandkey, bandname in j.items():
+                        if ( bandname == "Winter Primates"):
+                            print ("----------> Band name ", bandname , "is in ", i['name'])
  
 
 
